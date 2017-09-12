@@ -1,0 +1,28 @@
+<form (submit)='addBook($event, form, form.value)' #form='ngForm'>
+  <fieldset>
+    <legend>Add a Book</legend>
+    {{ form.invalid | json }}
+
+    <div>
+      Title: <input type="text" name="title" [(ngModel)]='book.title' required>
+
+    </div>
+    <div>
+      Author: <input type="text" name="author" minlength='3' [(ngModel)]='book.author' required>
+
+    </div>
+    <div>
+      Year: <input type="date" name='year' [(ngModel)]='book.date'>
+
+    </div>
+    <div>
+      Pages: <input type="number" name='pages' [(ngModel)]='book.pages'>
+
+    </div>
+    <div>
+      Publisher: <input type="text" name='publisher' [(ngModel)]='book.publisher'>
+
+    </div>
+    <input type="submit" value="submit" *ngIf='form.valid' >
+  </fieldset>
+</form>

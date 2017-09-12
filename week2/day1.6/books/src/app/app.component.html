@@ -1,0 +1,30 @@
+<h1>Books</h1>
+{{ form.invalid | json }}
+<form (submit)='onSubmit($event, form)' #form='ngForm'>
+  <fieldset>
+    <legend>Add a Book</legend>
+
+    <div>
+      <label for="">Title</label>
+      <input type="text" name='title' minlength='3' [ngModel]='book.title' required>
+    </div>
+    <div>
+      <label for="">Author</label>
+      <input type="text" name='author' [(ngModel)]='book.author' required>
+    </div>
+    <div>
+      <label for="">Year</label>
+      <input type="number" name='year' [(ngModel)]='book.year' required>
+    </div>
+    <div>
+      <label for="">Pages</label>
+      <input type="number" name='pages' [(ngModel)]='book.pages' required>
+    </div>
+    <div>
+      <label for="">Publisher</label>
+      <input type="text" name='publisher' [(ngModel)]='book.publisher' required>
+    </div>
+
+    <button *ngIf='form.valid'>Submit</button>
+  </fieldset>
+</form>
