@@ -4,9 +4,14 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { TitleizePipe } from './titleize.pipe';
+
+// TitleizePipe.skipWords = ['the']
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TitleizePipe,
   ],
   imports: [
     BrowserModule,

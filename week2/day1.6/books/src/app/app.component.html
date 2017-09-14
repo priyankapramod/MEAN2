@@ -28,3 +28,32 @@
     <button *ngIf='form.valid'>Submit</button>
   </fieldset>
 </form>
+
+<br>
+<br>
+<br>
+<section>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Author</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor='let book of books; let idx = index'>
+      <td>{{ idx }}</td>
+      <td>{{ book.title | titleize }}</td>
+      <td>{{ book.year }}</td>
+      <td>{{ book.author }}</td>
+      <td>
+        Future Actions
+      </td>
+    </tr>
+  </tbody>
+</table>
+</section>
