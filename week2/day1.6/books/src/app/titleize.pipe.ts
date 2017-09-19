@@ -8,6 +8,9 @@ export class TitleizePipe implements PipeTransform {
   public static skipWords: Array<string> = ['the', 'in', 'on', 'a', 'of'];
 
   transform(value: string, args?: boolean | string[]): string {
+    if (typeof value !== 'string') {
+      return value;
+    }
 
     const skipWords: Array<string> = Array.isArray(args) ? args : TitleizePipe.skipWords;
     const processSkipwords: boolean = args !== false;

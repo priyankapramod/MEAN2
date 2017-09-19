@@ -1,59 +1,7 @@
 <h1>Books</h1>
-{{ form.invalid | json }}
-<form (submit)='onSubmit($event, form)' #form='ngForm'>
-  <fieldset>
-    <legend>Add a Book</legend>
 
-    <div>
-      <label for="">Title</label>
-      <input type="text" name='title' minlength='3' [ngModel]='book.title' required>
-    </div>
-    <div>
-      <label for="">Author</label>
-      <input type="text" name='author' [(ngModel)]='book.author' required>
-    </div>
-    <div>
-      <label for="">Year</label>
-      <input type="number" name='year' [(ngModel)]='book.year' required>
-    </div>
-    <div>
-      <label for="">Pages</label>
-      <input type="number" name='pages' [(ngModel)]='book.pages' required>
-    </div>
-    <div>
-      <label for="">Publisher</label>
-      <input type="text" name='publisher' [(ngModel)]='book.publisher' required>
-    </div>
-
-    <button *ngIf='form.valid'>Submit</button>
-  </fieldset>
-</form>
+<app-book></app-book>
 
 <br>
 <br>
 <br>
-<section>
-<table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Title</th>
-      <th>Year</th>
-      <th>Author</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr *ngFor='let book of books; let idx = index'>
-      <td>{{ idx }}</td>
-      <td>{{ book.title | titleize }}</td>
-      <td>{{ book.year }}</td>
-      <td>{{ book.author }}</td>
-      <td>
-        Future Actions
-      </td>
-    </tr>
-  </tbody>
-</table>
-</section>
