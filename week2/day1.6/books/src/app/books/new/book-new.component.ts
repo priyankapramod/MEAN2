@@ -1,6 +1,8 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+import { BookService } from '../../book.service';
+
 import { Book } from '../../book';
 
 @Component({
@@ -13,16 +15,26 @@ export class BookNewComponent {
   @Output()
   addBook = new EventEmitter<Book>();
 
+  constructor(
+    private bookService: BookService,
+  ) {}
+
+
   onSubmit(event: Event, form: NgForm): void {
     event.preventDefault();
 
-    // this.books.push(form.value);
-    this.addBook.emit(form.value);
+    this.bookService.createBook(form.value)
+      .subscribe(book => {
+        this.addBook.emit(book);
+        this.book = new Book();
+        form.reset();
 
-    this.book = new Book();
+      }, error => {
+        console.log('errors creating book', error);
+        // display messages to user
+      });
 
 
-    form.reset();
     console.log('click event fired');
   }
 }

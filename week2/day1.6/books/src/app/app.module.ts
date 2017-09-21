@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
@@ -9,7 +10,7 @@ import { BookDetailComponent } from './books/detail/book-detail.component';
 import { BookTableComponent } from './books/table/book-table.component';
 
 import { TitleizePipe } from './titleize.pipe';
-
+import { BookService } from './book.service';
 // TitleizePipe.skipWords = ['the']
 
 @NgModule({
@@ -24,8 +25,11 @@ import { TitleizePipe } from './titleize.pipe';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpModule,
   ],
-  providers: [],
+  providers: [
+    BookService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

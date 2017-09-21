@@ -2,7 +2,7 @@ import { Book } from '../book';
 
 export const BOOKS: Array<Book> = [
   {
-    _id: '10',
+    id: '10',
     title: 'stranger in a strange land',
     author: 'robert heinlein',
     publisher: 'G. P. Punam\'s Sons',
@@ -10,7 +10,7 @@ export const BOOKS: Array<Book> = [
     pages: 408
   },
   {
-    _id: '11',
+    id: '11',
     title: 'where the red fern grows',
     author: 'wilson rawls',
     publisher: 'Doubleday',
@@ -18,7 +18,7 @@ export const BOOKS: Array<Book> = [
     pages: 245
   },
   {
-    _id: '12',
+    id: '12',
     title: 'a fire upon the deep',
     author: 'vernor vinge',
     publisher: 'Tor Books',
@@ -26,7 +26,7 @@ export const BOOKS: Array<Book> = [
     pages: 391
   },
   {
-    _id: '13',
+    id: '13',
     title: 'a game of thrones',
     author: 'george r. r. martin',
     publisher: 'Bantam Spectra',
@@ -34,7 +34,7 @@ export const BOOKS: Array<Book> = [
     pages: 694
   },
   {
-    _id: '14',
+    id: '14',
     title: 'leviathan wakes',
     author: 'james s. a. corey',
     publisher: 'Orbit Books',
@@ -42,7 +42,7 @@ export const BOOKS: Array<Book> = [
     pages: 582
   },
   {
-    _id: '15',
+    id: '15',
     title: 'foundation',
     author: 'isaac asimov',
     year: 1951,
@@ -50,7 +50,7 @@ export const BOOKS: Array<Book> = [
     publisher: 'Gnome Press'
   },
   {
-    _id: '16',
+    id: '16',
     title: 'slaughterhouse-five',
     author: 'kurt vonnegut',
     year: 1969,

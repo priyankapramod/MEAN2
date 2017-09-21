@@ -1,5 +1,5 @@
 <book-new (addBook)='addBook($event)'></book-new>
-
+{{ errorMessage }}
 <section>
   <table>
     <thead>
@@ -14,12 +14,12 @@
 
     <tbody>
       <tr *ngFor='let book of books; let idx = index' (click)='selectBook(book)'>
-        <td>{{ idx }}</td>
+        <td>{{ book.id }}</td>
         <td>{{ book.title | titleize }}</td>
         <td>{{ book.year }}</td>
         <td>{{ book.author }}</td>
         <td>
-          Future Actions
+          <button (click)='removeBook($event, book)'>Delete</button>
         </td>
       </tr>
     </tbody>
