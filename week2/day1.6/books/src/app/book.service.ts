@@ -9,7 +9,8 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class BookService {
-  public static base = 'http://59498bce6d49df0011102cfc.mockapi.io/books';
+  // public static base = 'http://59498bce6d49df0011102cfc.mockapi.io/books';
+  public static base = '/books';
 
   constructor(
     private http: Http
@@ -24,6 +25,11 @@ export class BookService {
   createBook(book: Book): Observable<Book> {
     return this.http.post(BookService.base, book)
             .map(response => response.json());
+  }
+
+  getBook(id: string): Observable<Book> {
+    return this.http.get(`${ BookService.base }/${ id }`)
+      .map(response => response.json());
   }
 
   removeBook(book: Book): Observable<Book> {

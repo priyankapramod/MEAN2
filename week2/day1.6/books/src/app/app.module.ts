@@ -9,6 +9,8 @@ import { BookNewComponent } from './books/new/book-new.component';
 import { BookDetailComponent } from './books/detail/book-detail.component';
 import { BookTableComponent } from './books/table/book-table.component';
 
+import { AppRoutingModule } from './app-routing.module';
+
 import { TitleizePipe } from './titleize.pipe';
 import { BookService } from './book.service';
 // TitleizePipe.skipWords = ['the']
@@ -23,6 +25,7 @@ import { BookService } from './book.service';
     TitleizePipe,
   ],
   imports: [
+    AppRoutingModule,
     BrowserModule,
     FormsModule,
     HttpModule,

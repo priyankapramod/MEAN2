@@ -1,4 +1,5 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgForm } from '@angular/forms';
 
 import { BookService } from '../../book.service';
@@ -17,6 +18,7 @@ export class BookNewComponent {
 
   constructor(
     private bookService: BookService,
+    private router: Router,
   ) {}
 
 
@@ -28,7 +30,7 @@ export class BookNewComponent {
         this.addBook.emit(book);
         this.book = new Book();
         form.reset();
-
+        this.router.navigate(['/list']);
       }, error => {
         console.log('errors creating book', error);
         // display messages to user
