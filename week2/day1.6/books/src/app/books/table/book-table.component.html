@@ -16,9 +16,9 @@
       <tr
         *ngFor='let book of books; let idx = index'
         (click)='selectBook(book)'
-        [routerLink]='["/books", book.id]'
+        [routerLink]='["/books", book._id]'
         >
-        <td>{{ book.id }}</td>
+        <td>{{ book._id }}</td>
         <td>{{ book.title | titleize }}</td>
         <td>{{ book.year }}</td>
         <td>{{ book.author }}</td>

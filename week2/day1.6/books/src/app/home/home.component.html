@@ -1,0 +1,33 @@
+<section>
+  <form (ngSubmit)='login(login.value)' #login='ngForm' action='#'>
+    <div>
+      <label for="">Email
+      </label><input type="email" name='email' [(ngModel)]='user.email'>
+    </div>
+    <div>
+      <label for="">Password</label>
+      <input type="password" name='password' [(ngModel)]='user.password'>
+    </div>
+
+      <button>Login</button>
+  </form>
+</section>
+
+
+<section>
+  <form (ngSubmit)='register($event, registerForm.value)' #registerForm='ngForm' action='#'>
+    <div>
+      <label for="">Username</label>
+      <input type="text" [(ngModel)]='user.username' name='username'>
+    </div>
+    <div>
+      <label for="">Email</label>
+      <input type="email" [(ngModel)]='user.email' name='email'>
+    </div>
+    <div>
+      <label for="">Password</label>
+      <input type="password" [(ngModel)]='user.password' name='password'>
+    </div>
+    <input type="submit" value='register'>
+  </form>
+</section>

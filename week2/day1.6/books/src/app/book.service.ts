@@ -10,7 +10,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class BookService {
   // public static base = 'http://59498bce6d49df0011102cfc.mockapi.io/books';
-  public static base = '/books';
+  public static base = '/api/books';
 
   constructor(
     private http: Http
@@ -33,7 +33,7 @@ export class BookService {
   }
 
   removeBook(book: Book): Observable<Book> {
-    return this.http.delete(`${ BookService.base}/${ book.id }`)
+    return this.http.delete(`${ BookService.base}/${ book._id }`)
       .map(response => response.json());
   }
 
